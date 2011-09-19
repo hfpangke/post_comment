@@ -1,0 +1,10 @@
+<%= form_for(@comment) do |f| %>
+
+<div align="center">
+	<%= h(@com.title) %><br />
+	<%= h(@com.author) %><br />
+	<%= f.text_area :valuate %>
+</div>
+<%= f.submit %>
+<% end %>
+<%= link_to "返回",comments_path %>

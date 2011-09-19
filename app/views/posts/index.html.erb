@@ -1,0 +1,19 @@
+<h1>Post list</h1>
+<table>
+	<tr>
+		<th>题目</th>
+		<th>作者</th>
+		<th>上传时间</th>
+		<th>最后修改时间</th>
+	</tr>
+	<% @posts.each do |post| %>
+	<tr>
+		<td><%= post.title %></td>
+		<td><%= post.author %></td>
+		<td><%= post.created_at %></td>
+		<td><%= post.updated_at %></td>
+		<td><%= link_to "阅读",post %></td>
+	</tr>
+	<% end %>
+</table><br />
+<%= link_to "发表文章",new_post_path %>

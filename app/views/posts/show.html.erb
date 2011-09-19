@@ -1,0 +1,27 @@
+
+<div align="center">
+	<h1><%= @post.title %></h1>	
+</div>
+<div align="center">
+	<h2><%= @post.author %></h2>
+</div>
+<div align="center">
+	<%= @post.description %><br />
+	<%= label_tag "评论:" %><br />
+<%= form_tag({ :controller => "comments",:action => "create"},:method =>"post") do  %>
+
+	<% @comment.each do |comment| %>
+	
+	<%= comment.valuate %>&nbsp;<h6><%= comment.created_at %></h6><br />
+	
+	<% end %>
+</div>
+<div align="center">
+	<%= hidden_field_tag "post_id",@post_id %><br />
+<%= text_area_tag "valuate" %><br />
+<%= submit_tag "评论" %>
+</div>
+<% end %>
+<div align="center">
+	<% link_to "返回", posts_path %>
+</div>

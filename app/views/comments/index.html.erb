@@ -1,0 +1,15 @@
+<h1>文章列表</h1>
+
+<table align="center">
+	<tr>
+		<th>题目</th>
+		<th>作者</th>
+	</tr>
+	<%= @comments.each do |comment| %>
+	<tr>
+		<td><%= h(comment.title) %></td>
+		<td><%= h(comment.author) %></td>
+		<td><%= link_to "查看",comment %></td>
+	</tr>
+	<% end %>
+</table>
